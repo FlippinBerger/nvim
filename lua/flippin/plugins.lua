@@ -9,6 +9,7 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" }
     },
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "nvim-tree/nvim-tree.lua",          dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "rose-pine/neovim",                 name = "rose-pine" },
     { "tpope/vim-fugitive" },
     { "tpope/vim-commentary" },
@@ -26,11 +27,9 @@ require("lazy").setup({
     },
     -- better quickfix window
     -- {'kevinhwang91/nvim-bqf'}
-    -- smooth scrolling
-    -- { 'karb94/neoscroll.nvim' },
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     {
         'mawkler/modicator.nvim',
@@ -48,5 +47,11 @@ require("lazy").setup({
             -- work properly.
             show_warnings = true,
         }
-    }
+    },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    { 'wansmer/treesj' },
 })
