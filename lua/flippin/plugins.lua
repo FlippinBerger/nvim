@@ -4,6 +4,7 @@ require("lazy").setup({
         tag = "0.1.6",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
+    -- todo highlighting
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" }
@@ -11,8 +12,11 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "nvim-tree/nvim-tree.lua",          dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "rose-pine/neovim",                 name = "rose-pine" },
+    -- git
     { "tpope/vim-fugitive" },
+    --comments
     { "tpope/vim-commentary" },
+    -- lsp stuff
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'williamboman/mason.nvim' },
@@ -20,6 +24,7 @@ require("lazy").setup({
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
+    -- surround stuff. quotes/brackets/braces
     {
         "kylechui/nvim-surround",
         version = "*",
@@ -27,13 +32,15 @@ require("lazy").setup({
     },
     -- better quickfix window
     -- {'kevinhwang91/nvim-bqf'}
+    -- status line
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
+    -- some color stuff
     {
         'mawkler/modicator.nvim',
-        dependencies = 'mawkler/onedark.nvim', -- Add your colorscheme plugin here
+        dependencies = 'rose-pine/neovim', -- Add your colorscheme plugin here
         init = function()
             -- These are required for Modicator to work
             vim.o.cursorline = true
@@ -48,10 +55,12 @@ require("lazy").setup({
             show_warnings = true,
         }
     },
+    -- file explorer/edit buffer
     {
         'stevearc/oil.nvim',
         opts = {},
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+    -- join or split long lines on semantic points set by treesitter
     { 'wansmer/treesj' },
 })
