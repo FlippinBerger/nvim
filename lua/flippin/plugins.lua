@@ -9,13 +9,15 @@ require("lazy").setup({
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
+    {
+        'numToStr/Comment.nvim',
+        lazy = false,
+    },
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "nvim-tree/nvim-tree.lua",          dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "rose-pine/neovim",                 name = "rose-pine" },
     -- git
     { "tpope/vim-fugitive" },
-    --comments
-    { "tpope/vim-commentary" },
     -- lsp stuff
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
@@ -63,4 +65,9 @@ require("lazy").setup({
     },
     -- join or split long lines on semantic points set by treesitter
     { 'wansmer/treesj' },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    }
 })
