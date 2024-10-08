@@ -13,9 +13,9 @@ require("lazy").setup({
         'numToStr/Comment.nvim',
         lazy = false,
     },
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
-    { "nvim-tree/nvim-tree.lua",          dependencies = { "nvim-tree/nvim-web-devicons" } },
-    { "rose-pine/neovim",                 name = "rose-pine" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-tree/nvim-tree.lua",         dependencies = { "nvim-tree/nvim-web-devicons" } },
+    { "rose-pine/neovim",                name = "rose-pine" },
     -- git
     { "tpope/vim-fugitive" },
     -- lsp stuff
@@ -30,6 +30,8 @@ require("lazy").setup({
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
+    -- autoclose html tags
+    { 'windwp/nvim-ts-autotag' },
     -- surround stuff. quotes/brackets/braces
     {
         "kylechui/nvim-surround",
