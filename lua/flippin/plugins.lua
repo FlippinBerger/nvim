@@ -19,6 +19,10 @@ require("lazy").setup({
     -- git
     { "tpope/vim-fugitive" },
     -- lsp stuff
+    {
+        'stevearc/conform.nvim',
+        opts = {},
+    },
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'williamboman/mason.nvim' },
@@ -63,6 +67,7 @@ require("lazy").setup({
         opts = {},
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+    { 'echasnovski/mini.nvim', version = false },
     -- join or split long lines on semantic points set by treesitter
     { 'wansmer/treesj' },
     {

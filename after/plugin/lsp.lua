@@ -35,7 +35,7 @@ end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {"lua_ls", "rust_analyzer", "tsserver", "golangci_lint_ls", "jsonls"},
+  ensure_installed = {"lua_ls", "rust_analyzer", "eslint", "golangci_lint_ls", "jsonls"},
   handlers = {
     default_setup,
   },
