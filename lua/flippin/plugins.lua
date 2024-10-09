@@ -15,21 +15,24 @@ require("lazy").setup({
     },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     { "nvim-tree/nvim-tree.lua",         dependencies = { "nvim-tree/nvim-web-devicons" } },
-    { "rose-pine/neovim",                name = "rose-pine" },
     -- git
     { "tpope/vim-fugitive" },
-    -- lsp stuff
+    -- formatter
     {
         'stevearc/conform.nvim',
         opts = {},
     },
+    -- lsp stuff
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
-    { 'L3MON4D3/LuaSnip' },
+    {
+        'L3MON4D3/LuaSnip',
+        dependencies = { 'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets' }
+    },
     -- autoclose html tags
     { 'windwp/nvim-ts-autotag' },
     -- surround stuff. quotes/brackets/braces
@@ -39,16 +42,19 @@ require("lazy").setup({
         event = "VeryLazy",
     },
     -- better quickfix window
-    -- {'kevinhwang91/nvim-bqf'}
+    { 'kevinhwang91/nvim-bqf' },
     -- status line
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     -- some color stuff
+    { "rose-pine/neovim", name = "rose-pine" },
+    { 'catppuccin/nvim',  name = 'catppuccin' },
     {
         'mawkler/modicator.nvim',
-        dependencies = 'rose-pine/neovim', -- Add your colorscheme plugin here
+        -- dependencies = 'rose-pine/neovim', -- Add your colorscheme plugin here
+        dependencies = 'catppuccin/nvim',
         init = function()
             -- These are required for Modicator to work
             vim.o.cursorline = true
@@ -76,5 +82,20 @@ require("lazy").setup({
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true
-    }
+    },
+    -- greeter screen
+    {
+        "goolord/alpha-nvim",
+        -- dependencies = { 'echasnovski/mini.icons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            local startify = require("alpha.themes.startify")
+            -- available: devicons, mini, default is mini
+            -- if provider not loaded and enabled is true, it will try to use another provider
+            startify.file_icons.provider = "devicons"
+            require("alpha").setup(
+                startify.config
+            )
+        end,
+    },
 })
