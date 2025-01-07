@@ -18,10 +18,10 @@ require('lualine').setup {
         }
     },
     sections = {
-        lualine_a = { { 'filename', file_status = true, path = 4 } },
-        lualine_b = { 'buffers' },
+        lualine_a = { 'buffers' },
+        lualine_b = { '' },
         lualine_c = { '' },
-        lualine_x = { 'branch', 'diff' },
+        lualine_x = { { 'filename', file_status = true, path = 4 }, 'branch', 'diff' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },
