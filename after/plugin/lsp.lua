@@ -53,6 +53,17 @@ lspconfig.lua_ls.setup({
     capabilities = lsp_capabilities
 })
 
+lspconfig.gdscript.setup({
+    capabilities = lsp_capabilities
+})
+
+-- alllow godot to send nvim client-server commands
+-- this starts a listening server at ~/.cache/nvim/server.pipe
+local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"
+if not vim.loop.fs_stat(pipepath) then
+    vim.fn.serverstart(pipepath)
+end
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = { "lua_ls", "rust_analyzer", "eslint", "golangci_lint_ls", "jsonls" },
