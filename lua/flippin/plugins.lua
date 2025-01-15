@@ -13,8 +13,9 @@ require("lazy").setup({
         'numToStr/Comment.nvim',
         lazy = false,
     },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    { "nvim-tree/nvim-tree.lua",         dependencies = { "nvim-tree/nvim-web-devicons" } },
+    { "nvim-treesitter/nvim-treesitter",        build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter-context" },
+    { "nvim-tree/nvim-tree.lua",                dependencies = { "nvim-tree/nvim-web-devicons" } },
     -- git
     { "tpope/vim-fugitive" },
     -- formatter
@@ -49,8 +50,9 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     -- some color stuff
-    { "rose-pine/neovim", name = "rose-pine" },
-    { 'catppuccin/nvim',  name = 'catppuccin' },
+    { "rose-pine/neovim",     name = "rose-pine" },
+    { 'catppuccin/nvim',      name = 'catppuccin' },
+    { "dgox16/oldworld.nvim", name = "oldworld" },
     {
         'mawkler/modicator.nvim',
         -- dependencies = 'rose-pine/neovim', -- Add your colorscheme plugin here

@@ -30,10 +30,10 @@ vim.keymap.set("n", "<leader>bn", ":bn<cr>")
 vim.keymap.set("n", "<leader>bp", ":bp<cr>")
 
 -- windows stuff
-vim.keymap.set("n", "<leader>s", ":vsplit<cr>")
-vim.keymap.set("n", "<leader>sh", ":split<cr>")
-
-vim.keymap.set("n", "<leader>wh", "<c-w>h")
-vim.keymap.set("n", "<leader>wl", "<c-w>l")
-vim.keymap.set("n", "<leader>wk", "<c-w>k")
-vim.keymap.set("n", "<leader>wj", "<c-w>j")
+-- vim.keymap.set("n", "<leader>s", ":vsplit<cr>")
+-- vim.keymap.set("n", "<leader>sh", ":split<cr>")
+--
+-- vim.keymap.set("n", "<leader>wh", "<c-w>h")
+-- vim.keymap.set("n", "<leader>wl", "<c-w>l")
+-- vim.keymap.set("n", "<leader>wk", "<c-w>k")
+-- vim.keymap.set("n", "<leader>wj", "<c-w>j")
